@@ -1,0 +1,10 @@
+---
+# Run a command on a node
+- hosts: all-servers
+  remote_user: root
+  sudo: no
+  vars:
+      - command_variable: "/usr/bin/date > /tmp/ansible-command.log"
+  tasks:
+      - name: run this command and ignore the result
+        shell: {{ command_variable }} || /bin/true
