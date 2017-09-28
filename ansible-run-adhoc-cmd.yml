@@ -3,8 +3,7 @@
 - hosts: all-servers
   remote_user: root
   become: no
-  vars:
-      - command_variable: "/usr/bin/date > /tmp/ansible-command.log"
   tasks:
-      - name: run this command and ignore the result
-        shell: "exec {{ command_variable }} || /bin/true"
+      - name: Loop through a list of commands and execute them
+        shell: "exec {{ item }}"
+        with_items: "{{ list_of_commands|default([]) }}"
