@@ -3,7 +3,7 @@
 - hosts: mwelk-cftest
   remote_user: root
   become: no
-- vars:
+  vars:
       - command_variable: "/usr/bin/date > /tmp/ansible-command.log"
   tasks:
       - name: run this command and ignore the result
