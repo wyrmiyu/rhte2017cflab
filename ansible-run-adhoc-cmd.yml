@@ -7,4 +7,4 @@
       - command_variable: "/usr/bin/date > /tmp/ansible-command.log"
   tasks:
       - name: run this command and ignore the result
-        shell: "{{ command_variable }} || /bin/true"
+        shell: "exec {{ command_variable }} || /bin/true"
