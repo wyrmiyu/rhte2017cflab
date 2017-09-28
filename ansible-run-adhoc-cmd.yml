@@ -1,6 +1,6 @@
 ---
 # Run a command on a node
-- hosts: mwelk-cftest
+- hosts: all-servers
   remote_user: root
   become: no
   vars:
