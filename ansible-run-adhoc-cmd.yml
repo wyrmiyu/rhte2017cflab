@@ -1,5 +1,8 @@
 ---
 # Run a command on a node
+- hosts: mwelk-cftest
+  remote_user: root
+  sudo: no
 - vars:
       - command_variable: "/usr/bin/date > /tmp/ansible-command.log"
   tasks:
